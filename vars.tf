@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "amis" {
-  type = map
+  type = map(any)
   default = {
     us-east-1 = "ami-005fc0f236362e99f"
     us-east-2 = "ami-00eb69d236edcfaf8"
