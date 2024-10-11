@@ -1,8 +1,8 @@
-resource "aws_elastic_beanstalk_environment" "vprofile-bean-prod11" {
-  name                = "vprofile-bean-prod11"
-  application         = aws_elastic_beanstalk_application.vprofile-prod.id####
-  solution_stack_name = "64bit Amazon Linux 2 v4.1.1 running Tomcat 8.5 Corretto 11"
-  cname_prefix        = "vprofile-bean-prod-domain"
+resource "aws_elastic_beanstalk_environment" "vprof1le-bean-pr0d11" {
+  name                = "vprof1le-bean-pr0d11"
+  application         = aws_elastic_beanstalk_application.vprofile-prod.name
+  solution_stack_name = "64bit Amazon Linux 2 v4.7.2 running Tomcat 9 Corretto 11"
+  cname_prefix        = "vprof1le-bean-pr0d11"
 
   setting {
     namespace = "aws:ec2:vpc"
@@ -13,7 +13,7 @@ resource "aws_elastic_beanstalk_environment" "vprofile-bean-prod11" {
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "IamInstanceProfile"
-    value     = "aws-elasticbeanstalk-ec2-role"
+    value     = "beanstalk-ec2-role-terra"
   }
 
   setting {
